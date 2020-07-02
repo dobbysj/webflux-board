@@ -1,0 +1,36 @@
+#DEFAULT
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+    static-path-pattern: /resources/**
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+#  profiles:
+#    active: local
+#    active: '@active.profile@'
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://125.141.139.48:3306/youtong_sos?serverTimezone=UTC
+#    username: youtong_sos
+#    password: sos9819!@
+#  jpa:
+#    properties:
+#      hibernate:
+#        show_sql : true
+#        format_sql : true
+config:
+  upload-file-path: /home/standard/upload/
+  
+#---
+##DEV
+#spring:
+#  profiles: dev
+#  
+#---
+##PROD
+#spring:
+#  profiles: prod
