@@ -14,6 +14,10 @@
 <tiles:putAttribute name="content">
 <section class="main-wrap">
 메인
+<script type="text/javascript" src="/js/lib/jquery.bxslider.js"></script>
+<img src="/images/common/no-image1.jpg"/>
+<img src="/images/common/no-image2.png"/>
+<img src="/images/common/no-image3.gif"/>
 </section>
 </tiles:putAttribute>
 </tiles:insertDefinition>

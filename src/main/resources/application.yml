@@ -4,7 +4,7 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-    static-path-pattern: /resources/**
+    #static-path-pattern: /resources/**
   servlet:
     multipart:
       max-file-size: 200MB
