@@ -3,6 +3,8 @@ package com.sooji.web.controller;
 import com.sooji.web.domain.Board;
 import com.sooji.web.domain.BoardDTO;
 import com.sooji.web.service.BoardService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -21,6 +23,7 @@ import java.util.List;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
+@Api(tags = {"게시판 API"})
 @Slf4j
 @RequiredArgsConstructor
 @RestController
@@ -30,6 +33,7 @@ public class BoardController {
     private final BoardService boardService;
 
     //목록
+    @ApiOperation(value="게시글 목록")
     @GetMapping
     public ResponseEntity boardList(HttpServletRequest request, @PageableDefault Pageable pageable) throws Exception {
         Page<Board> boards = boardService.findAll(pageable);
@@ -37,6 +41,7 @@ public class BoardController {
     }
 
     //상세
+    @ApiOperation(value="게시글 상세")
     @GetMapping("/{boardIdx}")
     public ResponseEntity boardDetail(HttpServletRequest request, @PathVariable(name="boardIdx", required=true) Long boardIdx) throws Exception {
         Board board = boardService.selectBoard(boardIdx);
@@ -44,6 +49,7 @@ public class BoardController {
     }
 
     //등록
+    @ApiOperation(value="게시글 등록")
     @PostMapping
     public ResponseEntity boardInsert(@RequestBody BoardDTO boardDTO) throws Exception {
         Board board = boardService.saveBoard(boardDTO);
@@ -60,6 +66,7 @@ public class BoardController {
     }
 
     //수정
+    @ApiOperation(value="게시글 수정")
     @PutMapping("/{boardIdx}")
     public ResponseEntity boardUpdate(@PathVariable(name="boardIdx", required = true) Long boardIdx
             , @RequestBody BoardDTO boardDTO) throws Exception {
@@ -78,6 +85,7 @@ public class BoardController {
     }
 
     //삭제
+    @ApiOperation(value="게시글 삭제")
     @DeleteMapping("{boardIdx}")
     public ResponseEntity<String> boardDelete(@PathVariable(name="boardIdx", required=true) Long boardIdx) throws Exception {
         Board board = this.boardService.deleteBoard(boardIdx);

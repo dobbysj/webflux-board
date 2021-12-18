@@ -49,6 +49,10 @@ dependencies {
 	implementation 'org.springframework.session:spring-session-core'
 
 	compile group: 'org.modelmapper', name: 'modelmapper', version: '2.3.8'
+
+	// https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
 }
 
 test {
