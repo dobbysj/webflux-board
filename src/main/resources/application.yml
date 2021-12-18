@@ -1,4 +1,6 @@
 #DEFAULT
+server:
+  port: 8081
 spring:
   mvc:
     view:
@@ -12,19 +14,23 @@ spring:
 #  profiles:
 #    active: local
 #    active: '@active.profile@'
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://125.141.139.48:3306/youtong_sos?serverTimezone=UTC
-#    username: youtong_sos
-#    password: sos9819!@
-#  jpa:
-#    properties:
-#      hibernate:
-#        show_sql : true
-#        format_sql : true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:1318/webflux?serverTimezone=Asia/Seoul
+    username: root
+    password: 1318
+  jpa:
+    generate-ddl: true # @Entity 클래스를 찾아서 ddl을 생성하고 실행
+    hibernate:
+      ddl-auto: update # ddl 생성전략 validate|none
+    show-sql: true # console에 sql 출력
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
 config:
   upload-file-path: /home/standard/upload/
-  
+
 #---
 ##DEV
 #spring:

@@ -1,4 +1,4 @@
-package com.youyoung.web;
+package com.sooji.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
