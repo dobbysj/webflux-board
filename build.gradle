@@ -24,7 +24,11 @@ repositories {
 }
 
 dependencies {
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
@@ -39,10 +43,15 @@ dependencies {
 	compile('org.apache.tiles:tiles-extras:3.0.8')
 	compile('org.apache.tiles:tiles-servlet:3.0.8')
 
-	compile('org.springframework.boot:spring-boot-starter-jdbc')
-	runtimeOnly 'mysql:mysql-connector-java'
-	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	//compile('com.navercorp.lucy:lucy-xss-servlet:2.0.1')
+	//jdbc - jpa
+	//compile('org.springframework.boot:spring-boot-starter-jdbc')
+	//compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	//runtimeOnly 'mysql:mysql-connector-java'
+
+	//r2dbc
+	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc:2.6.2'
+	implementation 'dev.miku:r2dbc-mysql:0.8.2.RELEASE'
+
 
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 

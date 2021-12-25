@@ -15,19 +15,16 @@ spring:
 #    active: local
 #    active: '@active.profile@'
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:1318/webflux?serverTimezone=Asia/Seoul
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: r2dbc:mysql://127.0.0.1:1318/webflux?serverTimezone=Asia/Seoul
     username: root
     password: 1318
-  jpa:
-    generate-ddl: true # @Entity 클래스를 찾아서 ddl을 생성하고 실행
-    hibernate:
-      ddl-auto: update # ddl 생성전략 validate|none
-    show-sql: true # console에 sql 출력
-    properties:
-      hibernate:
-        format_sql: true
-        use_sql_comments: true
+# log 설정
+logging:
+  level:
+    org:
+      springframework:
+        r2dbc: DEBUG
 config:
   upload-file-path: /home/standard/upload/
 
